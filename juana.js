@@ -75,17 +75,22 @@ onValue(sueloRef, (snapshot) => {
 onValue(tempRef, (snapshot) => {
     let temperatura = snapshot.val();
     tempValue.textContent = `${temperatura} °C`;
-    updateLastUpdate();   // <-- AGREGADO
+    updateLastUpdate(); 
 });
 
 onValue(humedadRef, (snapshot) => {
     let humedad = snapshot.val();
     humedadValue.textContent = `${humedad} %`;
-    updateLastUpdate();   // <-- AGREGADO
+    updateLastUpdate();  
 });
 
 onValue(sueloRef, (snapshot) => {
     let humedadSuelo = snapshot.val();
     sueloValue.textContent = `${humedadSuelo} %`;
-    updateLastUpdate();   // <-- AGREGADO
+    updateLastUpdate();   
 });
+let texto = document.querySelector('#temperatura')
+
+if (temperatura >=25){
+texto.textContent('Alerta: La temperatura es muy alta')
+}
