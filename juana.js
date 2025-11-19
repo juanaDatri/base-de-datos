@@ -63,3 +63,29 @@ onValue(sueloRef, (snapshot) => {
     const extTemp = document.getElementById("extTemp");
     const extWeather = document.getElementById("extWeather");
  });
+ function updateLastUpdate() {
+    const now = new Date();
+    const formatted =
+        now.toLocaleDateString("es-AR") + " " +
+        now.toLocaleTimeString("es-AR");
+    document.getElementById("lastUpdate").textContent =
+        "Última actualización: " + formatted;
+}
+
+onValue(tempRef, (snapshot) => {
+    let temperatura = snapshot.val();
+    tempValue.textContent = `${temperatura} °C`;
+    updateLastUpdate();   // <-- AGREGADO
+});
+
+onValue(humedadRef, (snapshot) => {
+    let humedad = snapshot.val();
+    humedadValue.textContent = `${humedad} %`;
+    updateLastUpdate();   // <-- AGREGADO
+});
+
+onValue(sueloRef, (snapshot) => {
+    let humedadSuelo = snapshot.val();
+    sueloValue.textContent = `${humedadSuelo} %`;
+    updateLastUpdate();   // <-- AGREGADO
+});

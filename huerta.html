@@ -6,54 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Huerta Inteligente</title>
     <link rel="stylesheet" href="style.css" />
+
     <nav class="navbar">
         <button onclick="location.href='index.html'" id="botoninicio">Inicio</button>
     </nav>
 </head>
 
 <body>
-    <div id="app">
 
+    <!-- 🌿 Lianas animadas a los costados -->
+    <div class="liana liana-left"></div>
+    <div class="liana liana-right"></div>
+
+    <div id="app">
         <div id="todo">
             <h1 class="logo"></h1>
 
-
             <section class="sensors" id="sensors">
+
                 <article class="sensor" data-type="temp" tabindex="0">
                     <div class="sensor-inner">
                         <div class="sensor-glow"></div>
                         <h2><u>Temperatura</u></h2>
                         <p class="value"><span id="tempValue">--</span><sup></sup></p>
-
                     </div>
                 </article>
+
                 <article class="sensor" data-type="humedad" tabindex="0">
                     <div class="sensor-inner">
                         <div class="sensor-glow"></div>
                         <h2><u>Humedad Ambiental</u></h2>
                         <p class="value"><span id="humedadValue">--</span><sup></sup></p>
-
                     </div>
                 </article>
+
                 <article class="sensor" data-type="suelo" tabindex="0">
                     <div class="sensor-inner">
                         <div class="sensor-glow"></div>
                         <h2><u>Humedad del Suelo</u></h2>
                         <p class="value"><span id="sueloValue">--</span><sup></sup></p>
-
                     </div>
                 </article>
-            </section>
 
             </section>
+
+            <p id="lastUpdate" style="margin-top:25px; font-size:18px; color:#333;">
+                Última actualización: --
+            </p>
+
         </div>
-        </main>
     </div>
-    </div>
-    </div>
-    <main>
 
+    <main>
         <script type="module" src="juana.js"></script>
+    </main>
 </body>
 
 </html>
