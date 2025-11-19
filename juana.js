@@ -93,4 +93,6 @@ let texto = document.querySelector('#temperatura')
 
 if (temperatura >=25){
 texto.textContent('Alerta: La temperatura es muy alta')
+}else{
+    texto.textContent('')
 }
